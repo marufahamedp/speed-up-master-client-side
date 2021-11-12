@@ -18,7 +18,6 @@ const Register = () => {
         }
         registerUser(data.email, data.password, data.name, data.username, history);
 
-        console.log(data.username)
     };
     const handelSingup = e =>{
        

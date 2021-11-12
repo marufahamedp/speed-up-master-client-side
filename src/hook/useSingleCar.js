@@ -6,7 +6,7 @@ const useSingleCar = () => {
     const [car, setcar] = useState({});
         
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${carID}`)
+        fetch(`https://intense-sands-94991.herokuapp.com/cars/${carID}`)
             .then(res => res.json())
             .then(data => setcar(data))
     }, [car])

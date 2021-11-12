@@ -36,7 +36,6 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 setAuthError(error.message);
-                console.log(error);
             })
             .finally(() => setIsLoading(false));
     }
@@ -87,7 +86,7 @@ const useFirebase = () => {
     }, [auth])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://intense-sands-94991.herokuapp.com/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -104,7 +103,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, username, method) => {
         const user = { email, displayName, username };
-        fetch('http://localhost:5000/users', {
+        fetch('https://intense-sands-94991.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

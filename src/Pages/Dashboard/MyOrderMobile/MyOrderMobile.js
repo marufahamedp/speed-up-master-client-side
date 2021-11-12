@@ -23,14 +23,14 @@ const MyOrderMobile = ({order}) => {
     const [cars, setcars] = useState([]);
     const { carName, orderStatus, price, _id, displayName, name, number,orderID, shippingaddress, car} = order;
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${car}`)
+        fetch(`https://intense-sands-94991.herokuapp.com/cars/${car}`)
             .then(res => res.json())
             .then(data => setcars(data))
     }, [cars])
     const handelDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://intense-sands-94991.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

@@ -27,7 +27,7 @@ export default class TextEditor extends Component {
         posts: details
     }
     const postCodes=()=>{
-        axios.post('http://localhost:5000/posts', data)
+        axios.post('https://intense-sands-94991.herokuapp.com/posts', data)
         .then(res => {
                 alert('data inserted');
         })

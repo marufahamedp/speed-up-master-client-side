@@ -46,11 +46,10 @@ function a11yProps(index) {
 export default function ProfileDeta() {
     const [posts, setPost] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/posts')
+        fetch('https://intense-sands-94991.herokuapp.com/posts')
         .then(res=>res.json())
         .then(data=>setPost(data))
     }, [posts])
-    console.log(posts);
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -59,8 +58,6 @@ export default function ProfileDeta() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-
-    console.log(posts);
   };
 
   return (

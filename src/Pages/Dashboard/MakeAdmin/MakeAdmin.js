@@ -1,18 +1,33 @@
-import { Button, TextField, Alert } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import useAuth from '../../../hook/useAuth';
-
-
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import { useForm } from "react-hook-form";
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+  
 const MakeAdmin = () => {
-    const [email, setEmail] = useState('');
+    const { register, handleSubmit, reset } = useForm();
+    const [open, setOpen] = React.useState(false);
+  
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpen(false);
+    };
     const [success, setSuccess] = useState(false);
     const { token } = useAuth();
-    const handleOnBlur = e => {
-        setEmail(e.target.value);
-    }
-    const handleAdminSubmit = e => {
-        const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+    const onSubmit = data => {
+        const email = data.email ;
+        const user ={ email }
+        fetch('https://intense-sands-94991.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -23,26 +38,32 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    console.log(data);
                     setSuccess(true);
+                    setOpen(true);
+                    reset();
                 }
             })
+    };
 
-        e.preventDefault()
-    }
     return (
         <div>
-            <h2>Make an Admin</h2>
-            <form onSubmit={handleAdminSubmit}>
+            <Typography sx={{fontWeight:600, textAlign:'center'}} variant="h4">Make an Admin</Typography>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <TextField
-                    sx={{ width: '50%' }}
+                    sx={{ width: '100%' }}
                     label="Email"
                     type="email"
-                    onBlur={handleOnBlur}
+                    {...register("email")}
                     variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+               <Box sx={{textAlign:'center'}}>
+               <Button sx={{my:3}} type="submit" variant="contained">Make Admin</Button>
+               </Box>
             </form>
-            {success && <Alert severity="success">Made Admin successfully!</Alert>}
+            {success &&  <Stack spacing={2} sx={{ width: '100%' }}> 
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+       <Alert  sx={{mb:3, width: '100%'}} severity="success">Made Admin successfully!</Alert>
+      </Snackbar>
+    </Stack>}
         </div>
     );
 };

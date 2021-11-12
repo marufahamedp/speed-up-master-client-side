@@ -4,7 +4,7 @@ const useTeams = () => {
     const [teamMember, setTeamMember] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/teammembers')
+        fetch('https://intense-sands-94991.herokuapp.com/teammembers')
             .then(res => res.json())
             .then(data => setTeamMember(data))
     }, [teamMember])

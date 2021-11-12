@@ -10,6 +10,7 @@ import ProfileMenu from '../ProfileMenu/ProfileMenu';
 import { Container } from '@mui/material';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../hook/useAuth';
+import logo from '../../../../images/logo.png'
 const Header = () => {
   const {user, logout} =useAuth();
     return (
@@ -19,8 +20,10 @@ const Header = () => {
           <Toolbar>
           
            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Assignment 12
+           
+           <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}><img style={{width:'100%'}} src={logo}/></Button> </Link>
             </Typography>
+            
             <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>Home</Button> </Link>
             <Link style={{textDecoration: 'none'}} to="/allcars"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>All Cars</Button> </Link>
             <Link style={{textDecoration: 'none'}} to="/about"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>About</Button> </Link>

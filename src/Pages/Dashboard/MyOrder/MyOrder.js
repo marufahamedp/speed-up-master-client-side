@@ -21,17 +21,15 @@ const MyOrder = ({order}) => {
 
 
     const {name, orderStatus, shippingaddress, billingaddress, number, car, _id} = order;
-    console.log(order);
     const [cars, setcars] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${car}`)
+        fetch(`https://intense-sands-94991.herokuapp.com/cars/${car}`)
             .then(res => res.json())
             .then(data => setcars(data))
     }, [cars])
 
     const { carName, manufacturer, price, imageURL, carDetails } = cars;
-    console.log(cars.carName);
 
     return (
         

@@ -10,7 +10,7 @@ const Reviews = () => {
     const [defaultValue, setDefaultValue] = useState({});
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://intense-sands-94991.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const { user } = useAuth()
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://intense-sands-94991.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [reviews])

@@ -57,7 +57,7 @@ const ManageAllOrder = ({order}) => {
     const [cars, setcars] = useState([]);
     const { carName, orderStatus, price, _id, displayName, name, number,orderID, shippingaddress, car} = order;
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${car}`)
+        fetch(`https://intense-sands-94991.herokuapp.com/${car}`)
             .then(res => res.json())
             .then(data => setcars(data))
     }, [cars])
@@ -66,7 +66,7 @@ const ManageAllOrder = ({order}) => {
 
 
   const handelShip= e => {
-    const url = `http://localhost:5000/orders/${_id}`;
+    const url = `https://intense-sands-94991.herokuapp.com/orders/${_id}`;
     
 
         axios.put(url, {
@@ -78,7 +78,7 @@ const ManageAllOrder = ({order}) => {
     
 
       const handelDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`
+        const url = `https://intense-sands-94991.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

@@ -4,7 +4,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 const DashboardHome = () => {
     return (
         <div>
-           <MakeAdmin></MakeAdmin>
+         
         </div>
     );
 };

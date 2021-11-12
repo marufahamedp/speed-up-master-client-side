@@ -42,17 +42,16 @@ const ManageAllOrderMobile = ({order}) => {
     const [cars, setcars] = useState([]);
     const { carName, orderStatus, price, _id, displayName, name, number,orderID, shippingaddress, car, email} = order;
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${car}`)
+        fetch(`https://intense-sands-94991.herokuapp.com/cars/${car}`)
             .then(res => res.json())
             .then(data => setcars(data))
     }, [cars])
    
-  console.log(cars.carName);
 
 
   const handelShip= e => {
  
-    const url = `http://localhost:5000/orders/${_id}`;
+    const url = `https://intense-sands-94991.herokuapp.com/orders/${_id}`;
     
     
         axios.put(url, {

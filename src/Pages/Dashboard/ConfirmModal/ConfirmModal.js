@@ -58,7 +58,7 @@ const style = {
 
 
 const handelDelete = id => {
-    const url = `http://localhost:5000/orders/${id}`
+    const url = `https://intense-sands-94991.herokuapp.com/orders/${id}`
         fetch(url, {
             method: 'DELETE',
         })

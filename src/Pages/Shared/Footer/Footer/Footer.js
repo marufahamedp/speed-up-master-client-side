@@ -26,7 +26,7 @@ const Footer = () => {
                 </Grid>
             </Container>
             <Typography sx={{textAlign:'center', pb:1}}>
-            © 2021 Assignment 12 || All Rights Reserved
+            © 2021 Speed Up || All Rights Reserved
             </Typography>
         </Box>
     );

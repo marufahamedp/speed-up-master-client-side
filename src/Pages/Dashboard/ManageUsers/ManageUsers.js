@@ -11,13 +11,16 @@ import DisplayUser from '../DisplayUser/DisplayUser';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 import DisplayUserinMobile from '../DisplayUserinMobile/DisplayUserinMobile';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 
 const ManageUsers = () => {
   const { users } = useUsers()
   return (
     <div>
+       <MakeAdmin></MakeAdmin>
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+       
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>

@@ -6,7 +6,6 @@ import useAuth from '../../hook/useAuth';
 import './DisplayMyBlogsinProfile.css'
 const DisplayMyBlogsinProfile = ({post}) => {
     const {posts, _id} = post
-    console.log(posts);
     const {user} = useAuth();
 
     return (

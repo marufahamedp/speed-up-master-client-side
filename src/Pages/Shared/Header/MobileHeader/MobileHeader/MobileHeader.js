@@ -4,7 +4,7 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
@@ -15,6 +15,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import ProfileMenu from '../../ProfileMenu/ProfileMenu';
 import useAuth from '../../../../../hook/useAuth';
+import logo from '../../../../../images/logo.png';
 const MobileHeader = () => {
 
   const {user, logout} =useAuth();
@@ -129,7 +130,7 @@ const MobileHeader = () => {
             <MenuIcon /> 
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Assignment 12
+           <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}><img style={{width:'100%'}} src={logo}/></Button> </Link>
           </Typography>
          {
            user.email &&  <ProfileMenu></ProfileMenu>

@@ -38,7 +38,7 @@ const Buycar = () => {
     const [defaultValue, setDefaultValue] = useState({});
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://intense-sands-94991.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,6 @@ const Buycar = () => {
     };
 
     useEffect(() => {
-        console.log();
         setDefaultValue({ orderStatus: 'Pending', name: user.displayName, email: user.email, car: car._id })
     }, [car._id]);
     useEffect(() => {

@@ -6,14 +6,14 @@ import { useForm } from "react-hook-form";
 import useTeams from "../../../hook/useTeams";
 import DisplayMember from "../DisplayMember/DisplayMember";
 const AddTeamMember = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const { teamMember} = useTeams();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/teammembers', data)
+        axios.post('https://intense-sands-94991.herokuapp.com/teammembers', data)
         .then(res => {
                 alert('data inserted');
+                reset()
         })
-        console.log(data)
     };
     return (
         <div>
