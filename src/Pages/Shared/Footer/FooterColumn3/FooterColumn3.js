@@ -8,7 +8,7 @@ const FooterColumn3 = () => {
     return (
         <Box sx={{display:{md:'flex'}, justifyContent:{md: 'center'}}}>
             <Box>
-            <Typography sx={{p:1, textAlign:{xs:'center'}}} variant="h5">
+            <Typography sx={{p:1, textAlign:{xs:'center', md:'start'}}} variant="h5">
                 CONTACT US
             </Typography>
             <Box sx={{display:'flex', alignItems:'center', mb:2}}>
