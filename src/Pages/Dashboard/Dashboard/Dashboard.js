@@ -212,10 +212,10 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
                     </Route>
-                    <Route  path={`${path}/dashboardhome`}>
+                    <Route path={`${path}/dashboardhome`}>
                     <DashboardHome></DashboardHome>
                     </Route>
-                    <AdminRoute  path={`${path}/manageuser`}>
+                    <AdminRoute path={`${path}/manageuser`}>
                         <ManageUsers></ManageUsers>
                     </AdminRoute>
                     <AdminRoute  path={`${path}/addteammember`}>
