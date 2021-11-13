@@ -42,6 +42,7 @@ import AdminRoute from '../../../AdminRoute/AdminRoute';
 import PaymentIcon from '@mui/icons-material/Payment';
 import Pay from '../Pay/Pay';
 import ManageAllReviews from '../ManageAllReviews/ManageAllReviews/ManageAllReviews';
+import PrivetRoute from '../../../PrivetRoute/PrivetRoute';
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -238,9 +239,9 @@ function Dashboard(props) {
                     <Route exact path={`${path}/reviews`}>
                        <Reviews></Reviews>
                     </Route>
-                    <Route exact path={`${path}/pay`}>
+                    <PrivetRoute exact path={`${path}/pay`}>
                        <Pay></Pay>
-                    </Route>
+                    </PrivetRoute>
                 </Switch>
             </Box>
         </Box>
@@ -248,10 +249,6 @@ function Dashboard(props) {
 }
 
 Dashboard.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
 };
 

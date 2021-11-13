@@ -86,12 +86,17 @@ const useFirebase = () => {
     }, [auth])
   
     useEffect(( ) => {
+        let isUnmount = false;
+        setIsLoading(true);
         fetch(`https://intense-sands-94991.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-            .catch(error=>{
-                console.log(error);
+            .then(data =>{
+                if(!isUnmount){
+                    setAdmin(data.admin)
+                    setIsLoading(false);
+                }
             })
+            
     }, [user.email])
 
     const logout = () => {
