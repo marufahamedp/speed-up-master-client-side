@@ -47,12 +47,12 @@ const ManageProduct = ({ car }) => {
 
             <TableCell>
                 <Link style={{ textDecoration: 'none' }} to={`/allcars/${_id}`}>
-                    <Button size="small">Car Details</Button>
+                    <Button className="speedcolor" size="small">Car Details</Button>
                 </Link>
             </TableCell>
 
             <TableCell>
-                <Button  onClick={handleOpen} size="small">Delete Order</Button></TableCell>
+                <Button className="speedcolor"  onClick={handleOpen} size="small">Delete Order</Button></TableCell>
                <DeleteProductModal
                _id={_id}
                handleOpen={handleOpen}

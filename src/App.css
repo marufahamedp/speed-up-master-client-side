@@ -8,3 +8,35 @@
 .imghoverBox{
   overflow: hidden;
 }
+.speedButton{
+  background-color: #FF8D2B !important;
+}
+.speedButton:hover{
+  background-color: #FF8D2B !important;
+}
+.speedButtonO{
+  outline: #FF8D2B !important;
+  color: #FF8D2B !important;
+  border: 1px solid #FF8D2B !important;
+}
+.speedButtonO:hover{
+  outline: #FF8D2B !important;
+  color: #FF8D2B !important;
+  border: 1px solid #FF8D2B !important;
+}
+.speedButtonS{
+  outline: #000000 !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+.speedButtonS:hover{
+  outline: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+.speedbg{
+  background-color: #FF8D2B !important;
+}
+.speedcolor{
+  color: #FF8D2B !important;
+}

@@ -54,7 +54,7 @@ const KnowAboutUs = () => {
                                             sx={{ width: '100%', mb:2 }}
                                         />
                                         <Box sx={{textAlign:'end'}}>
-                                        <Button variant="contained">Send Message</Button>
+                                        <Button className="speedButton" variant="contained">Send Message</Button>
                                         </Box>
                                     </Box>
                                 </Grid>

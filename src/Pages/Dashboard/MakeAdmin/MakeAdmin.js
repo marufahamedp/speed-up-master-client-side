@@ -56,7 +56,7 @@ const MakeAdmin = () => {
                     {...register("email")}
                     variant="standard" />
                <Box sx={{textAlign:'center'}}>
-               <Button sx={{my:3}} type="submit" variant="contained">Make Admin</Button>
+               <Button className="speedButton" sx={{my:3}} type="submit" variant="contained">Make Admin</Button>
                </Box>
             </form>
             {success &&  <Stack spacing={2} sx={{ width: '100%' }}> 

@@ -41,6 +41,7 @@ import useAuth from '../../../hook/useAuth';
 import AdminRoute from '../../../AdminRoute/AdminRoute';
 import PaymentIcon from '@mui/icons-material/Payment';
 import Pay from '../Pay/Pay';
+import ManageAllReviews from '../ManageAllReviews/ManageAllReviews/ManageAllReviews';
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -56,44 +57,44 @@ function Dashboard(props) {
        <div>
            {
                user.email &&   <div>
-               <Typography sx={{ textAlign: 'center' }}> <Link style={{ textDecoration: 'none', color: 'black', }} to="/"><Button sx={{ width: '100%', borderRadius: 0, fontSize: '25px' }} style={{ padding: '10px 0' }} variant="contained">Back To Home</Button></Link> </Typography>
+               <Typography sx={{ textAlign: 'center' }}> <Link style={{ textDecoration: 'none', color: 'black', }} to="/"><Button className="speedButton" sx={{ width: '100%', borderRadius: 0, fontSize: '25px' }} style={{ padding: '10px 0' }} variant="contained">Back To Home</Button></Link> </Typography>
                <Divider />
                <List>
               {
                   admin && <Box>
                        <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/dashboardhome`}>
                    <ListItem button>
-                       <DashboardIcon sx={{mr:1}}/>
+                       <DashboardIcon className="speedcolor" sx={{mr:1}}/>
                       Dashboard
                    </ListItem>
                    </Link>
                <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageuser`}>
-                   <ListItem button>
-                       <ManageAccountsIcon sx={{mr:1}}/>
+                   <ListItem  button>
+                       <ManageAccountsIcon className="speedcolor" sx={{mr:1}}/>
                    Manage User
                    </ListItem>
                    </Link>
                <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/addteammember`}>
                    <ListItem button>
-                       <PeopleIcon sx={{mr:1}}/>
+                       <PeopleIcon className="speedcolor" sx={{mr:1}}/>
                    Manage Team Member
                    </ListItem>
                    </Link>
                <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/addaproduct`}>
                    <ListItem button>
-                       <AddBoxIcon sx={{mr:1}}/>
+                       <AddBoxIcon className="speedcolor" sx={{mr:1}}/>
                    Add A Product
                    </ListItem>
                    </Link>
                    <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageproducts`}>
                    <ListItem button>
-                       <BallotIcon sx={{mr:1}}/>
+                       <BallotIcon className="speedcolor" sx={{mr:1}}/>
                    Manage Products
                    </ListItem>
                    </Link>
                <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageallorders`}>
                    <ListItem button>
-                       <HandymanIcon sx={{mr:1}}/>
+                       <HandymanIcon className="speedcolor" sx={{mr:1}}/>
                    Manage All Orders
                    </ListItem>
                    </Link>
@@ -102,19 +103,25 @@ function Dashboard(props) {
                    <Box>
              <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/myorders`}>
                    <ListItem button>
-                       <AssignmentReturnedIcon sx={{mr:1}}/>
+                       <AssignmentReturnedIcon className="speedcolor" sx={{mr:1}}/>
                    My Orders
                    </ListItem>
                    </Link>
                <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/reviews`}>
                    <ListItem button>
-                       <ReviewsIcon sx={{mr:1}}/>
+                       <ReviewsIcon className="speedcolor" sx={{mr:1}}/>
                        Review
+                   </ListItem>
+                   </Link>
+               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageallreviews`}>
+                   <ListItem button>
+                       <ReviewsIcon className="speedcolor" sx={{mr:1}}/>
+                       Manage All Reviews
                    </ListItem>
                    </Link>
                    <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/pay`}>
                    <ListItem button >
-                       <PaymentIcon sx={{mr:1}}/>
+                       <PaymentIcon className="speedcolor" sx={{mr:1}}/>
                        Pay
                    </ListItem>
                    </Link>
@@ -122,7 +129,7 @@ function Dashboard(props) {
             
                <Link style={{ textDecoration: 'none', color:'black' }} to={`/home`} onClick={logout}>
                    <ListItem button >
-                       <LogoutIcon sx={{mr:1}}/>
+                       <LogoutIcon className="speedcolor" sx={{mr:1}}/>
                        Log Out
                    </ListItem>
                    </Link>
@@ -148,7 +155,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar>
+                <Toolbar className="speedbg">
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -158,7 +165,7 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography  variant="h6" noWrap component="div">
                         Customize your site
                     </Typography>
                 </Toolbar>
@@ -222,6 +229,9 @@ function Dashboard(props) {
                     <AdminRoute exact path={`${path}/manageproducts`}>
                         <ManageProducts></ManageProducts>
                     </AdminRoute>
+                    <Route exact path={`${path}/manageallreviews`}>
+                        <ManageAllReviews></ManageAllReviews>
+                    </Route>
                     <Route exact path={`${path}/myorders`}>
                         <MyOrders></MyOrders>
                     </Route>

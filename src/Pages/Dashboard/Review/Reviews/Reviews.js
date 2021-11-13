@@ -84,13 +84,13 @@ const Reviews = () => {
                         <TextField
                             label="Write a rating out of 5"
                             variant="standard"
-                            type="number"
+                           
                             {...register("rating")}
                             sx={{ width: 1, mb: 2 }}
                         />
 
                         <Box sx={{ textAlign: 'end' }}>
-                            <Button type="submit" variant="contained">Add Member</Button>
+                            <Button className="speedButton" type="submit" variant="contained">Add Member</Button>
                         </Box>
                     </form>
                 </Grid>

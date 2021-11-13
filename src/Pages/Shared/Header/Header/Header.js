@@ -43,8 +43,8 @@ const Header = () => {
             }
             {
               !user.email && <Box sx={{display:'flex'}}>
-                <Link style={{textDecoration: 'none', marginLeft:'10px'}} to="/login"> <Button  variant="outlined" sx={{display: { xs: 'none', sm: 'block' } }} style={{}}>Log In</Button> </Link>
-            <Link style={{textDecoration: 'none', marginLeft:'10px'}} to="/register"> <Button  variant="contained" sx={{display: { xs: 'none', sm: 'block' } }} style={{}}>Register</Button> </Link>
+                <Link style={{textDecoration: 'none', marginLeft:'10px'}} to="/login"> <Button className="speedButtonO" variant="outlined" sx={{display: { xs: 'none', sm: 'block' } }} style={{}}>Log In</Button> </Link>
+            <Link style={{textDecoration: 'none', marginLeft:'10px'}} to="/register"> <Button className="speedButton" variant="contained" sx={{display: { xs: 'none', sm: 'block' } }} style={{}}>Register</Button> </Link>
               </Box>
             }
             

@@ -25,25 +25,28 @@ const DisplayCar = ({ car }) => {
                     alt="green iguana"
                     className="cardImg"
                 />
-                <CardContent>
-                    <Typography sx={{fontWeight: 600}} gutterBottom variant="h6" component="div">
+                <>
+               <Box  className="alltext"> 
+                   <Typography variant="body2" color="text.secondary">
+                        {carDetails.slice(0, 40)}....
+                    </Typography>
+                    <Typography sx={{fontWeight: 600}} variant="h6">
                         {carName}
                     </Typography>
-                    <Typography sx={{fontWeight: 400}}  variant="h6">
-                        $ {price}
+                    <Typography sx={{fontWeight: 400}}  variant="body1">
+                        $ {price} USD
                     </Typography>
-                    <Typography variant="body1" component="div">
+                    {/* <Typography variant="body1" component="div">
                         Manufacturer: {manufacturer}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {carDetails.slice(0, 100)}....
-                    </Typography>
-                </CardContent>
+                    </Typography> */}
+                    </Box>
+                    
+                </>
                 
                 <div  className="btnsection">
                 <CardActions sx={{ width:'100%'}}>
                     <Link  style={{textDecoration:'none', width:'100%' }} to={`/allcars/${_id}`}>
-                    <Button sx={{ width:'100%'}} className="btn" variant="contained"> <AddShoppingCartIcon sx={{mr:1}} /> Buy Now</Button>
+                    <Button sx={{ width:'100%'}} className="btn speedButton" variant="contained"> <AddShoppingCartIcon sx={{mr:1}} /> Buy Now</Button>
                     </Link>
                     
                 </CardActions>

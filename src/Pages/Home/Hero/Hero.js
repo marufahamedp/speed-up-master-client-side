@@ -1,16 +1,37 @@
-import { Button, Typography } from '@mui/material';
+import { Button, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bannerBackground from '../../../images/heroBanner.jpg';
+import bannerBackground from '../../../images/car-header.png';
+import HeroFrom from '../HeroFrom/HeroFrom';
 import './Hero.css'
 const Hero = () => {
-    const herobg = {
+    const bguse = {
         backgroundImage: `url(${bannerBackground})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: '650px'
     }
     return (
         <div>
-            <Box className="hero-Container">
+            <Box style={bguse}>
+                <Container>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width:'100%', height:'650px'}} >
+                        <HeroFrom></HeroFrom>
+                    </Grid>
+                    <Grid item xs={12} md={8}>
+                       
+                    </Grid>
+                    
+                </Grid>
+                </Container>
+            </Box>
+
+
+
+            {/* <Box className="hero-Container">
                 <Box>
                     <img className="hero-img" src={bannerBackground} alt="" />
                 </Box>
@@ -37,7 +58,7 @@ const Hero = () => {
                 <Button variant="contained">Explore Now</Button>
                 </Link>
                 </Box>
-            </Box>
+            </Box> */}
         </div>
     );
 };

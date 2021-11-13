@@ -25,7 +25,7 @@ const Tips = () => {
                             <Typography sx={{ my: 2 }} variant="body1">
                             Prepare for your first half-marathon or run another one easily with our personalized running programs. Try our strength exercises for runners.
                             </Typography>
-                            <Button variant="contained">Read More</Button>
+                            <Button className="speedButton" variant="contained">Read More</Button>
                             </Box>
                         </Box>
                     </Grid>
@@ -43,7 +43,7 @@ const Tips = () => {
                             Prepare for your first half-marathon or run another one easily with our personalized running programs. Try our strength exercises for runners.
                             </Typography>
                             <Box sx={{textAlign:'end'}}>
-                            <Button variant="contained">Read More</Button>
+                            <Button className="speedButton" variant="contained">Read More</Button>
                             </Box>
                             </Box>
                         </Box>

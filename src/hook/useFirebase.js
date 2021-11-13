@@ -88,10 +88,7 @@ const useFirebase = () => {
     useEffect(( ) => {
         fetch(`https://intense-sands-94991.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
-            .then(data => {
-                setAdmin(data.admin)
-                console.log();
-            })
+            .then(data => setAdmin(data.admin))
     }, [user.email])
 
     const logout = () => {

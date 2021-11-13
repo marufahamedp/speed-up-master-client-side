@@ -102,6 +102,7 @@ const Register = () => {
                                         />
                                         <br />
                                         <Button
+                                         className="speedButton"
                                             type="submit"
                                             variant="contained"
                                             sx={{ my: 2, width: "100%" }}

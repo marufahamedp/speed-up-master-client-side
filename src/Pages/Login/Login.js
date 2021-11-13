@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 import { useHistory, useLocation } from 'react-router';
 const Login = () => {
-    
+
     const location = useLocation();
     const history = useHistory();
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
@@ -21,7 +21,7 @@ const Login = () => {
     const handelGooglesingin = () => {
         signInWithGoogle(location, history)
     }
-    const bguse ={
+    const bguse = {
         backgroundImage: `url(https://i.ibb.co/1LYJYbS/samuele-errico-piccarini-FMb-WFDi-VRPs-unsplash.jpg)`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -30,19 +30,19 @@ const Login = () => {
     }
 
     return (
-        <Box style={bguse} sx={{my:2,}}>
+        <Box style={bguse} sx={{ my: 2, }}>
             {
-                    user?.email && <Alert severity="success">Log in successfully</Alert>
-                }
-                {
-                    authError && <Alert severity="error">{authError.slice(5)}</Alert>
-                }
+                user?.email && <Alert severity="success">Log in successfully</Alert>
+            }
+            {
+                authError && <Alert severity="error">{authError.slice(5)}</Alert>
+            }
             <Container>
                 <Grid container spacing={2}>
-                <Grid item xs={12} md={8}>
+                    <Grid item xs={12} md={8}>
                         <img style={{ width: '100%' }} src="" alt="" />
                     </Grid>
-                    <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt:10 }}>
+                    <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 10 }}>
                         {
                             isLoading && <CircularProgress />
                         }
@@ -71,32 +71,33 @@ const Login = () => {
                                     />
                                     <br />
                                     <Button
+                                    className="speedButton"
                                         type="submit"
                                         variant="contained"
                                         sx={{ my: 2, width: "100%" }}
                                     >
                                         Sing In
                                     </Button>
-                                   <Typography sx={{ display: { xs: 'none', sm: 'block' }, textAlign:'center' }}>
-                                   ------OR------
-                                   </Typography>
+                                    <Typography sx={{ display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
+                                        ------OR------
+                                    </Typography>
                                     <Box
                                         sx={{ mt: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                                         onClick={handelGooglesingin}
                                     >
-                                        <Button variant="outlined">
-                                                Sing in with google
+                                        <Button  className="speedButtonO" variant="outlined">
+                                            Sing in with google
                                         </Button>
                                     </Box>
                                 </form>
-                                <Typography sx={{ mt: 3, textAlign:'center', fontSize: '0.8rem' }}>
+                                <Typography sx={{ mt: 3, textAlign: 'center', fontSize: '0.8rem' }}>
                                     Don't have an account <Link to='/register'>Creat One</Link>
                                 </Typography>
                             </Paper>
-                            
+
                         </Box>}
                     </Grid>
-                    
+
                 </Grid>
             </Container>
         </Box>

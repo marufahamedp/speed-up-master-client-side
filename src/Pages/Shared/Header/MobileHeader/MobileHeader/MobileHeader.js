@@ -48,7 +48,7 @@ const MobileHeader = () => {
           <List>
            <ListItem>
            <Link style={{textDecoration: 'none'}} to="/home">
-           <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+           <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
            <HomeIcon sx={{mr:1}} style={{fontSize: '30px'}} />
             <Typography variant="h6">Home</Typography>
            </Box>
@@ -56,7 +56,7 @@ const MobileHeader = () => {
            </ListItem>
            <ListItem>
            <Link style={{textDecoration: 'none'}} to="/allcars">
-           <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+           <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
            <DirectionsCarFilledIcon sx={{mr:1}} style={{fontSize: '30px'}} />
             <Typography variant="h6">All Cars</Typography>
            </Box>
@@ -64,7 +64,7 @@ const MobileHeader = () => {
            </ListItem>
            <ListItem>
            <Link style={{textDecoration: 'none'}} to="/about">
-           <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+           <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
            <InfoIcon sx={{mr:1}} style={{fontSize: '30px'}} />
             <Typography variant="h6">About</Typography>
            </Box>
@@ -72,7 +72,7 @@ const MobileHeader = () => {
            </ListItem>
            <ListItem>
            <Link style={{textDecoration: 'none'}} to="/contact">
-           <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+           <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
            <ContactsIcon sx={{mr:1}} style={{fontSize: '30px'}} />
             <Typography variant="h6">Contact</Typography>
            </Box>
@@ -80,7 +80,7 @@ const MobileHeader = () => {
            </ListItem>
           {
             user.email && <ListItem onClick={logout}>
-            <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+            <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
             <LoginIcon sx={{mr:1}} style={{fontSize: '30px'}} />
              <Typography variant="h6">Log Out</Typography>
             </Box>
@@ -90,7 +90,7 @@ const MobileHeader = () => {
             !user.email && <Box>
                <ListItem>
            <Link style={{textDecoration: 'none'}} to="/login">
-           <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+           <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
            <LoginIcon sx={{mr:1}} style={{fontSize: '30px'}} />
             <Typography variant="h6">Log In</Typography>
            </Box>
@@ -98,7 +98,7 @@ const MobileHeader = () => {
            </ListItem>
            <ListItem>
            <Link style={{textDecoration: 'none'}} to="/register">
-           <Box style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
+           <Box className="speedcolor" style={{color: '#1976D2'}}  sx={{display: 'flex', alignItems: 'center'}}>
            <PersonAddIcon sx={{mr:1}} style={{fontSize: '30px'}} />
             <Typography variant="h6">Register</Typography>
            </Box>
@@ -118,7 +118,7 @@ const MobileHeader = () => {
           {['left'].map((anchor) => (
             <React.Fragment key={anchor}>
               <Box sx={{mb:7, flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ mb:8 }}>
+      <AppBar className="speedbg" position="fixed" sx={{ mb:8 }}>
         <Toolbar>
           <IconButton
             size="large"

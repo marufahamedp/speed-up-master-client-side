@@ -60,7 +60,7 @@ const AddTeamMember = () => {
                             sx={{ width: 1, mb:2 }}
                         />
                         <Box sx={{textAlign:'end'}}>
-                        <Button type="submit" variant="contained">Add Member</Button>
+                        <Button className="speedButton" type="submit" variant="contained">Add Member</Button>
                         </Box>
                     </form>
                 </Grid>

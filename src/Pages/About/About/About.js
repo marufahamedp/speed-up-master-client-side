@@ -26,7 +26,7 @@ const About = () => {
                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet harum saepe provident facere iusto autem animi aperiam a quidem facilis? Distinctio modi hic ex quas ut, totam illum cum? Id?
             </Typography>
             <Box sx={{textAlign:'end'}}>
-                            <Button variant="contained">Read More</Button>
+                            <Button className="speedButton" variant="contained">Read More</Button>
                             </Box>
                    </Box>
                </Box>

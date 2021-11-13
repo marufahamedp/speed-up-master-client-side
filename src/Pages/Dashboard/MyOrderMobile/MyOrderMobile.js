@@ -72,14 +72,14 @@ const MyOrderMobile = ({order}) => {
                         <TableCell>View Car Details</TableCell>
                         <TableCell>
                     <Link style={{ textDecoration: 'none' }} to={`/allcars/${cars._id}`}>
-                        <Button size="small">Car Details</Button>
+                        <Button className="speedcolor" size="small">Car Details</Button>
                     </Link>
                 </TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Delete Order</TableCell>
                         <TableCell>
-                <Button  onClick={handleOpen} size="small">Delete Order</Button></TableCell>
+                <Button className="speedcolor" onClick={handleOpen} size="small">Delete Order</Button></TableCell>
                <ConfirmModal
                _id={_id}
                handleOpen={handleOpen}

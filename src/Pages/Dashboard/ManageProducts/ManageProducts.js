@@ -23,7 +23,7 @@ const ManageProducts = () => {
                     </Typography>
           <Box sx={{textAlign:'end', my:3}}>
           <Link style={{ textDecoration: 'none', color: 'black' }} to={`/dashboard/addaproduct`}>
-                    <Button variant="contained"> Add A Product</Button>
+                    <Button className="speedButton" variant="contained"> Add A Product</Button>
                 </Link>
           </Box>
        <TableContainer component={Paper}>

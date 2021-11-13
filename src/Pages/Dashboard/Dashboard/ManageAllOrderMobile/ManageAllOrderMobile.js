@@ -103,7 +103,7 @@ const ManageAllOrderMobile = ({order}) => {
                         <TableCell>Delete Order</TableCell>
 
                         <TableCell>
-                <Button  onClick={handleOpen} size="small">Ship Order</Button></TableCell>
+                <Button className="speedcolor" onClick={handleOpen} size="small">Ship Order</Button></TableCell>
                
                     </TableRow>
 
@@ -111,7 +111,7 @@ const ManageAllOrderMobile = ({order}) => {
                         <TableCell>Delete Order</TableCell>
 
                         <TableCell>
-                <Button  onClick={handleOpendelete} size="small">Delete Order</Button></TableCell>
+                <Button className="speedcolor" onClick={handleOpendelete} size="small">Delete Order</Button></TableCell>
                 <ConfirmModal
                _id={_id}
                handleOpen={handleOpendelete}

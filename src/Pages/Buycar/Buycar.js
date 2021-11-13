@@ -136,7 +136,7 @@ const Buycar = () => {
                                     {...register("shippingaddress")}
                                 />
                                 <Box sx={{ textAlign: 'end' }}>
-                                    <Button  type="submit" variant="contained">Place Order</Button>
+                                    <Button className="speedButton"  type="submit" variant="contained">Place Order</Button>
                                 </Box>
                             </form>
                         </Paper>
