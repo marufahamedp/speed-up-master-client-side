@@ -11,16 +11,11 @@ const Login = () => {
 
     const location = useLocation();
     const history = useHistory();
-    const { user, loginUser, signInWithGoogle, isLoading, authError, setAuthError } = useAuth();
+    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
     const { register, handleSubmit } = useForm();
-    const redirect_uri = location.state?.from || '/home'
     const onSubmit = data => {
+        loginUser(data.email, data.password, location, history)
 
-        loginUser(data.email, data.password)
-        .then((userCredential) => {
-            history.push(redirect_uri);
-            setAuthError('');
-        })
 
     };
 

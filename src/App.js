@@ -38,9 +38,9 @@ function App() {
           <Route exact path="/register"> 
             <Register></Register>
           </Route>
-          <PrivetRoute path="/dashboard"> 
+          <Route path="/dashboard"> 
             <Dashboard></Dashboard>
-          </PrivetRoute>
+          </Route>
           <PrivetRoute exact path="/profile"> 
            <Profile></Profile>
           </PrivetRoute>

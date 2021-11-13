@@ -2,16 +2,21 @@ import { CircularProgress } from '@mui/material';
 import React from 'react';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../hook/useAuth';
-
+import { useHistory, useLocation } from 'react-router';
 
 const PrivetRoute = ({ children, ...rest }) =>  {
+    
+    const location = useLocation();
+    const history = useHistory();
     const { user, isLoading } = useAuth();
-    let isUnmount = false;
-  if(!isUnmount){
-    if (isLoading) { return <CircularProgress /> }
-    isUnmount = true;
+ 
+  if(isLoading){
+    if (!user.email) {
+        console.log(location.pathname);
+        return <CircularProgress /> }
+   
   }
-    console.log(isLoading);
+   
     return (
         <Route
             {...rest}

@@ -8,10 +8,10 @@ import Select from '@mui/material/Select';
 import { Box, Alert, Button, CircularProgress, Container, Grid, Paper, TextField, Typography } from '@mui/material';
 const HeroFrom = () => {
 
-    const [age, setAge] = React.useState('');
+    const [carName, setcarName] = React.useState('');
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setcarName(event.target.value);
     };
 
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
@@ -44,11 +44,11 @@ const HeroFrom = () => {
 
                 <FormControl fullWidth>
 
-                    <InputLabel id="select">Age</InputLabel>
+                    <InputLabel id="select">Car Name</InputLabel>
                     <Select
                         labelId="select"
                         id="select"
-                        value={age}
+                        value={carName}
                         label="Car Name"
                         onChange={handleChange}
                     >

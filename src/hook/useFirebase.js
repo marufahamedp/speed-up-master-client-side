@@ -42,12 +42,16 @@ const useFirebase = () => {
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
-           
-            .finally(() => setIsLoading(false))
+
+            .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.push(destination);
+                setAuthError('');
+            })
             .catch((error) => {
                 setAuthError(error.message);
             })
-            
+            .finally(() => setIsLoading(false))
     }
 
     const signInWithGoogle = (location, history) => {
@@ -132,7 +136,6 @@ const useFirebase = () => {
         loginUser,
         signInWithGoogle,
         logout,
-        setAuthError
     }
 }
 
