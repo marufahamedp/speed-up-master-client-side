@@ -96,6 +96,11 @@ const useFirebase = () => {
                     setIsLoading(false);
                 }
             })
+            .catch((error)=>{
+                setIsLoading(false);
+                setAuthError(error);
+                setAdmin('')
+            })
             
     }, [user.email])
 

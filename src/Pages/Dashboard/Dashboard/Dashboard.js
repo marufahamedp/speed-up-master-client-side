@@ -212,34 +212,34 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
                     </Route>
-                    <Route exact path={`${path}/dashboardhome`}>
+                    <Route  path={`${path}/dashboardhome`}>
                     <DashboardHome></DashboardHome>
                     </Route>
-                    <AdminRoute exact path={`${path}/manageuser`}>
+                    <AdminRoute  path={`${path}/manageuser`}>
                         <ManageUsers></ManageUsers>
                     </AdminRoute>
-                    <AdminRoute exact path={`${path}/addteammember`}>
+                    <AdminRoute  path={`${path}/addteammember`}>
                         <AddTeamMember></AddTeamMember>
                     </AdminRoute>
-                    <AdminRoute exact path={`${path}/addaproduct`}>
+                    <AdminRoute   path={`${path}/addaproduct`}>
                         <AddAProduct></AddAProduct>
                     </AdminRoute>
-                    <AdminRoute exact path={`${path}/manageallorders`}>
+                    <AdminRoute  path={`${path}/manageallorders`}>
                         <ManageAllOrders></ManageAllOrders>
                     </AdminRoute>
-                    <AdminRoute exact path={`${path}/manageproducts`}>
+                    <AdminRoute  path={`${path}/manageproducts`}>
                         <ManageProducts></ManageProducts>
                     </AdminRoute>
-                    <Route exact path={`${path}/manageallreviews`}>
+                    <AdminRoute  path={`${path}/manageallreviews`}>
                         <ManageAllReviews></ManageAllReviews>
-                    </Route>
-                    <Route exact path={`${path}/myorders`}>
+                    </AdminRoute>
+                    <PrivetRoute  path={`${path}/myorders`}>
                         <MyOrders></MyOrders>
-                    </Route>
-                    <Route exact path={`${path}/reviews`}>
+                    </PrivetRoute>
+                    <PrivetRoute  path={`${path}/reviews`}>
                        <Reviews></Reviews>
-                    </Route>
-                    <PrivetRoute exact path={`${path}/pay`}>
+                    </PrivetRoute>
+                    <PrivetRoute  path={`${path}/pay`}>
                        <Pay></Pay>
                     </PrivetRoute>
                 </Switch>
