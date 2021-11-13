@@ -49,7 +49,7 @@ const HeroFrom = () => {
                         labelId="select"
                         id="select"
                         value={age}
-                        label="Age"
+                        label="Car Name"
                         onChange={handleChange}
                     >
                         <MenuItem value={10}>Ferrari F12 TRS</MenuItem>

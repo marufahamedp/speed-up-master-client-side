@@ -6,7 +6,11 @@ import useAuth from '../hook/useAuth';
 
 const PrivetRoute = ({ children, ...rest }) =>  {
     const { user, isLoading } = useAuth();
-    if (!user.email) { return <CircularProgress /> }
+    let isUnmount = false;
+  if(!isUnmount){
+    if (isLoading) { return <CircularProgress /> }
+    isUnmount = true;
+  }
     console.log(isLoading);
     return (
         <Route

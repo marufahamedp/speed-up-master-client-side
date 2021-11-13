@@ -212,14 +212,15 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 <Switch>
-                    <Route exact path={path}>
-                        <DashboardHome></DashboardHome>
-                    </Route>
-                    <Route path={`${path}/dashboardhome`}>
-                        <DashboardHome></DashboardHome>
-                    </Route>
+
                     {
                         admin && <div>
+                            <Route exact path={path}>
+                                <DashboardHome></DashboardHome>
+                            </Route>
+                            <Route path={`${path}/dashboardhome`}>
+                                <DashboardHome></DashboardHome>
+                            </Route>
                             <AdminRoute path={`${path}/manageuser`}>
                                 <ManageUsers></ManageUsers>
                             </AdminRoute>
@@ -252,6 +253,12 @@ function Dashboard(props) {
 
                     {
                         user.email && <div>
+                            <Route exact path={path}>
+                            <MyOrders></MyOrders>
+                            </Route>
+                            <Route path={`${path}/dashboardhome`}>
+                            <MyOrders></MyOrders>
+                            </Route>
                             <PrivetRoute path={`${path}/myorders`}>
                                 <MyOrders></MyOrders>
                             </PrivetRoute>
