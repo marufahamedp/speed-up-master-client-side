@@ -13,6 +13,7 @@ import AuthProvider from './context/AuthProvider';
 import AllCars from './Pages/AllCars/AllCars';
 import Buycar from './Pages/Buycar/Buycar';
 import PrivetRoute from './PrivetRoute/PrivetRoute';
+import useAuth from './hook/useAuth';
 
 function App() {
   return (

@@ -7,15 +7,18 @@ import useTeams from '../../../hook/useTeams';
 import useUsers from '../../../hook/useUsers';
 import useReviews from '../../../hook/useReviews';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hook/useAuth';
 const DashboardHome = () => {
     const {cars} = useCars()
     const {orders} = useOrders()
     const {teamMember} = useTeams()
     const {users} = useUsers()
     const {reviews} = useReviews()
+    const {admin} =useAuth()
     return (
         <div>
-            <Grid container spacing={2}>
+            {
+                admin && <Grid container spacing={2}>
                 <Grid item xs={12} md={4}>
                <Paper className="speedbg" sx={{p:2, color:'white'}} elevation={3}>
                    <Typography sx={{textAlign:'center', fontWeight: 600}} variant="h5">
@@ -92,6 +95,7 @@ const DashboardHome = () => {
                </Paper>
                 </Grid>
             </Grid>
+            }
         </div>
     );
 };

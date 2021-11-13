@@ -6,7 +6,8 @@ import useAuth from '../hook/useAuth';
 
 const PrivetRoute = ({ children, ...rest }) =>  {
     const { user, isLoading } = useAuth();
-    if (isLoading) { return <CircularProgress /> }
+    if (!user.email) { return <CircularProgress /> }
+    console.log(isLoading);
     return (
         <Route
             {...rest}

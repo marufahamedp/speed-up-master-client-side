@@ -45,7 +45,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                history.replace(destination);
                 setAuthError('');
             })
             .catch((error) => {
@@ -62,7 +62,7 @@ const useFirebase = () => {
                 saveUser(user.email, user.displayName, user.displayName, 'PUT');
                 setAuthError('');
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                history.replace(destination);
             }).catch((error) => {
                 setAuthError(error.message);
             }).finally(() => setIsLoading(false));
@@ -86,19 +86,19 @@ const useFirebase = () => {
     }, [auth])
   
     useEffect(( ) => {
-        let isUnmount = true;
+        let isUnmount = false;
         setIsLoading(true);
         fetch(`https://intense-sands-94991.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data =>{
-                if(isUnmount){
+                if(!isUnmount){
                     setAdmin(data.admin)
                     setIsLoading(false);
                 }
             })
-            .catch((error)=>{
-                
-            })
+            return () => {
+                isUnmount = true;
+            }
             
     }, [user.email])
 

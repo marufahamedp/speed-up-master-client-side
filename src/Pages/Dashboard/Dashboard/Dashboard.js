@@ -52,96 +52,99 @@ function Dashboard(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-  
-    const {logout, user, admin} = useAuth()
+
+    const { logout, user, admin } = useAuth()
     const drawer = (
-       <div>
-           {
-               user.email &&   <div>
-               <Typography sx={{ textAlign: 'center' }}> <Link style={{ textDecoration: 'none', color: 'black', }} to="/"><Button className="speedButton" sx={{ width: '100%', borderRadius: 0, fontSize: '25px' }} style={{ padding: '10px 0' }} variant="contained">Back To Home</Button></Link> </Typography>
-               <Divider />
-               <List>
-              {
-                  admin && <Box>
-                       <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/dashboardhome`}>
-                   <ListItem button>
-                       <DashboardIcon className="speedcolor" sx={{mr:1}}/>
-                      Dashboard
-                   </ListItem>
-                   </Link>
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageuser`}>
-                   <ListItem  button>
-                       <ManageAccountsIcon className="speedcolor" sx={{mr:1}}/>
-                   Manage User
-                   </ListItem>
-                   </Link>
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/addteammember`}>
-                   <ListItem button>
-                       <PeopleIcon className="speedcolor" sx={{mr:1}}/>
-                   Manage Team Member
-                   </ListItem>
-                   </Link>
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/addaproduct`}>
-                   <ListItem button>
-                       <AddBoxIcon className="speedcolor" sx={{mr:1}}/>
-                   Add A Product
-                   </ListItem>
-                   </Link>
-                   <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageproducts`}>
-                   <ListItem button>
-                       <BallotIcon className="speedcolor" sx={{mr:1}}/>
-                   Manage Products
-                   </ListItem>
-                   </Link>
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageallorders`}>
-                   <ListItem button>
-                       <HandymanIcon className="speedcolor" sx={{mr:1}}/>
-                   Manage All Orders
-                   </ListItem>
-                   </Link>
-                  </Box>
-              }
-                   <Box>
-             <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/myorders`}>
-                   <ListItem button>
-                       <AssignmentReturnedIcon className="speedcolor" sx={{mr:1}}/>
-                   My Orders
-                   </ListItem>
-                   </Link>
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/reviews`}>
-                   <ListItem button>
-                       <ReviewsIcon className="speedcolor" sx={{mr:1}}/>
-                       Review
-                   </ListItem>
-                   </Link>
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/manageallreviews`}>
-                   <ListItem button>
-                       <ReviewsIcon className="speedcolor" sx={{mr:1}}/>
-                       Manage All Reviews
-                   </ListItem>
-                   </Link>
-                   <Link style={{ textDecoration: 'none', color:'black' }} to={`${url}/pay`}>
-                   <ListItem button >
-                       <PaymentIcon className="speedcolor" sx={{mr:1}}/>
-                       Pay
-                   </ListItem>
-                   </Link>
-             </Box>
-            
-               <Link style={{ textDecoration: 'none', color:'black' }} to={`/home`} onClick={logout}>
-                   <ListItem button >
-                       <LogoutIcon className="speedcolor" sx={{mr:1}}/>
-                       Log Out
-                   </ListItem>
-                   </Link>
-              
-                   
-               </List>
-               <Divider />
-   
-           </div>
-           }
-       </div>
+        <div>
+            {
+                user.email && <div>
+                    <Typography sx={{ textAlign: 'center' }}> <Link style={{ textDecoration: 'none', color: 'black', }} to="/"><Button className="speedButton" sx={{ width: '100%', borderRadius: 0, fontSize: '25px' }} style={{ padding: '10px 0' }} variant="contained">Back To Home</Button></Link> </Typography>
+                    <Divider />
+                    <List>
+                        {
+                            admin && <Box>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/dashboardhome`}>
+                                    <ListItem button>
+                                        <DashboardIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Dashboard
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/manageuser`}>
+                                    <ListItem button>
+                                        <ManageAccountsIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Manage User
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/addteammember`}>
+                                    <ListItem button>
+                                        <PeopleIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Manage Team Member
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/addaproduct`}>
+                                    <ListItem button>
+                                        <AddBoxIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Add A Product
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/manageproducts`}>
+                                    <ListItem button>
+                                        <BallotIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Manage Products
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/manageallorders`}>
+                                    <ListItem button>
+                                        <HandymanIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Manage All Orders
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/manageallreviews`}>
+                                    <ListItem button>
+                                        <ReviewsIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Manage All Reviews
+                                    </ListItem>
+                                </Link>
+                            </Box>
+                        }
+                        {
+                            !admin && <Box>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/myorders`}>
+                                    <ListItem button>
+                                        <AssignmentReturnedIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        My Orders
+                                    </ListItem>
+                                </Link>
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/reviews`}>
+                                    <ListItem button>
+                                        <ReviewsIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Review
+                                    </ListItem>
+                                </Link>
+
+                                <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/pay`}>
+                                    <ListItem button >
+                                        <PaymentIcon className="speedcolor" sx={{ mr: 1 }} />
+                                        Pay
+                                    </ListItem>
+                                </Link>
+                            </Box>
+
+                        }
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to={`/home`} onClick={logout}>
+                            <ListItem button >
+                                <LogoutIcon className="speedcolor" sx={{ mr: 1 }} />
+                                Log Out
+                            </ListItem>
+                        </Link>
+
+
+                    </List>
+                    <Divider />
+
+                </div>
+            }
+        </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -166,7 +169,7 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography  variant="h6" noWrap component="div">
+                    <Typography variant="h6" noWrap component="div">
                         Customize your site
                     </Typography>
                 </Toolbar>
@@ -213,35 +216,53 @@ function Dashboard(props) {
                         <DashboardHome></DashboardHome>
                     </Route>
                     <Route path={`${path}/dashboardhome`}>
-                    <DashboardHome></DashboardHome>
+                        <DashboardHome></DashboardHome>
                     </Route>
-                    <AdminRoute path={`${path}/manageuser`}>
-                        <ManageUsers></ManageUsers>
-                    </AdminRoute>
-                    <AdminRoute  path={`${path}/addteammember`}>
-                        <AddTeamMember></AddTeamMember>
-                    </AdminRoute>
-                    <AdminRoute   path={`${path}/addaproduct`}>
-                        <AddAProduct></AddAProduct>
-                    </AdminRoute>
-                    <AdminRoute  path={`${path}/manageallorders`}>
-                        <ManageAllOrders></ManageAllOrders>
-                    </AdminRoute>
-                    <AdminRoute  path={`${path}/manageproducts`}>
-                        <ManageProducts></ManageProducts>
-                    </AdminRoute>
-                    <AdminRoute  path={`${path}/manageallreviews`}>
-                        <ManageAllReviews></ManageAllReviews>
-                    </AdminRoute>
-                    <PrivetRoute  path={`${path}/myorders`}>
-                        <MyOrders></MyOrders>
-                    </PrivetRoute>
-                    <PrivetRoute  path={`${path}/reviews`}>
-                       <Reviews></Reviews>
-                    </PrivetRoute>
-                    <PrivetRoute  path={`${path}/pay`}>
-                       <Pay></Pay>
-                    </PrivetRoute>
+                    {
+                        admin && <div>
+                            <AdminRoute path={`${path}/manageuser`}>
+                                <ManageUsers></ManageUsers>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/addteammember`}>
+                                <AddTeamMember></AddTeamMember>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/addaproduct`}>
+                                <AddAProduct></AddAProduct>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/manageallorders`}>
+                                <ManageAllOrders></ManageAllOrders>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/manageproducts`}>
+                                <ManageProducts></ManageProducts>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/manageallreviews`}>
+                                <ManageAllReviews></ManageAllReviews>
+                            </AdminRoute>
+                            <PrivetRoute path={`${path}/myorders`}>
+                                <MyOrders></MyOrders>
+                            </PrivetRoute>
+                            <PrivetRoute path={`${path}/reviews`}>
+                                <Reviews></Reviews>
+                            </PrivetRoute>
+                            <PrivetRoute path={`${path}/pay`}>
+                                <Pay></Pay>
+                            </PrivetRoute>
+                        </div>
+                    }
+
+                    {
+                        user.email && <div>
+                            <PrivetRoute path={`${path}/myorders`}>
+                                <MyOrders></MyOrders>
+                            </PrivetRoute>
+                            <PrivetRoute path={`${path}/reviews`}>
+                                <Reviews></Reviews>
+                            </PrivetRoute>
+                            <PrivetRoute path={`${path}/pay`}>
+                                <Pay></Pay>
+                            </PrivetRoute>
+                        </div>
+                    }
                 </Switch>
             </Box>
         </Box>
