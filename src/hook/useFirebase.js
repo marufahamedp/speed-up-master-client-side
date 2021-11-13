@@ -89,6 +89,9 @@ const useFirebase = () => {
         fetch(`https://intense-sands-94991.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
+            .catch(error=>{
+                console.log(error);
+            })
     }, [user.email])
 
     const logout = () => {
