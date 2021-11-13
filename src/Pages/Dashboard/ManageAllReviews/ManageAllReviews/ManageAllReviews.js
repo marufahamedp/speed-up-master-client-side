@@ -7,7 +7,7 @@ import ManageAllReview from "../ManageAllReview/ManageAllReview";
 
 
 const ManageAllReviews = () => {
-  
+
     const [reviews, setReviews] = useState([]);
     const { user } = useAuth()
     useEffect(() => {
@@ -19,15 +19,21 @@ const ManageAllReviews = () => {
 
     return (
         <div>
-            <Typography sx={{my:3, textAlign:'center'}} variant="h4">
-                       Total Rewiews:  {reviews.length}
-                    </Typography>
-             {
-            reviews.map(reviewall => <ManageAllReview
-            key={reviewall._id}
-            reviewall={reviewall}
-            ></ManageAllReview>)
-        }
+            <Typography sx={{ my: 3, textAlign: 'center' }} variant="h4">
+                Total Rewiews:  {reviews.length}
+            </Typography>
+
+            <Grid container spacing={2}>
+            {
+                reviews.map(reviewall => <ManageAllReview
+                    key={reviewall._id}
+                    reviewall={reviewall}
+                ></ManageAllReview>)
+            }
+               
+                
+            </Grid>
+         
         </div>
     );
 };

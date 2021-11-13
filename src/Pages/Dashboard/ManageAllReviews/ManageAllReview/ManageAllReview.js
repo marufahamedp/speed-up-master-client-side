@@ -1,4 +1,4 @@
-import { Button, Paper, Typography } from '@mui/material';
+import { Button, Grid, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -43,7 +43,9 @@ const ManageAllReview = ({reviewall}) => {
     const {name, email, photo, review, rating, _id} = reviewall;
     return (
         <div>
-            <Paper sx={{p:2, mb:2, display:'flex', alignItems:'center', justifyContent: 'space-between'}} elevation={3}>
+             <Grid item sx={{display:{xs:'none', md:'block'}}} >
+             <Box sx={{ml: 10}} >
+             <Paper sx={{p:2, mb:2, display:'flex', alignItems:'center', justifyContent: 'space-between'}} elevation={3}>
                 <Box sx={{display:'flex', alignItems:'center'}}>
                     <img style={{width:'50px', borderRadius:'100%'}} src={photo} alt="" />
                     <Typography sx={{ml:2}} variant="h6">
@@ -70,6 +72,39 @@ const ManageAllReview = ({reviewall}) => {
                     ></ConfirmDeleteReviewModal>
                 </Box>
             </Paper>
+                </Box>
+             </Grid>
+                <Grid item xs={12} md={12} sx={{display:{xs:'block', md:'none'}}}>
+             <Paper sx={{p:2, mb:2}} elevation={3}>
+                <Box sx={{display:'flex', alignItems:'center'}}>
+                    <img style={{width:'50px', borderRadius:'100%'}} src={photo} alt="" />
+                    <Typography sx={{ml:2}} variant="h6">
+                        {name}
+                    </Typography>
+                </Box>
+                <Box sx={{display:'flex', alignItems:'center'}}>
+                <Typography sx={{mr:2}} variant="h6">
+                        Rating: 
+                    </Typography>
+                <Rating sx={{}} name="half-rating-read" defaultValue={rating} precision={0.5} readOnly size="large" />
+                <Typography sx={{ml:2}} variant="h6">
+                        Star
+                    </Typography>
+                </Box>
+                <Box>
+                   <Box sx={{textAlign:'center'}}>
+                   <Button sx={{color:'red'}}  onClick={handleOpen} >< DeleteForeverIcon />Delete</Button>
+                   </Box>
+                    <ConfirmDeleteReviewModal
+                         _id={_id}
+                         handleOpen={handleOpen}
+                         handleClose={handleClose}
+                         handelDelete={handelDelete}
+                         open={open}
+                    ></ConfirmDeleteReviewModal>
+                </Box>
+            </Paper>
+                </Grid>
             <Stack spacing={2} sx={{ width: '100%' }}>
                     <Snackbar  open={openalart} autoHideDuration={3000} onClose={handleClosealart}>
                        <Box>
