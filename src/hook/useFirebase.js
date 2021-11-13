@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
 import initializeFirebase from '../Firebase/firebase.ini';
-
+import { useHistory, useLocation } from 'react-router';
 
 // initialize firebase app
 initializeFirebase();
@@ -84,11 +84,14 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [auth])
-
-    useEffect(() => {
+  
+    useEffect(( ) => {
         fetch(`https://intense-sands-94991.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
+            .then(data => {
+                setAdmin(data.admin)
+                console.log();
+            })
     }, [user.email])
 
     const logout = () => {

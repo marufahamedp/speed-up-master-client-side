@@ -4,9 +4,28 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../hook/useAuth";
 import Review from "../Review/Review";
-
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Reviews = () => {
+
+    
+    const [open, setOpen] = React.useState(false);
+
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+
     const [defaultValue, setDefaultValue] = useState({});
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
@@ -20,7 +39,7 @@ const Reviews = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Review done');
+                    setOpen(true);
                     reset()
                 }
 
@@ -89,7 +108,15 @@ const Reviews = () => {
         }
             </Grid>
             </Box>
-            
+            <Stack spacing={2} sx={{ width: '100%' }}>
+                    <Snackbar  open={open} autoHideDuration={2000} onClose={handleClose}>
+                       <Box>
+                       <Alert onClose={handleClose} severity="success" sx={{ width: '100%', }}>
+                            Successfully reviewed this site
+                        </Alert>
+                       </Box>
+                    </Snackbar>
+                </Stack>
        
         </div>
     );

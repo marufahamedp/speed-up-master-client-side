@@ -10,7 +10,7 @@ const Tips = () => {
                 <Grid container spacing={5}>
                     <Grid item xs={12} md={6}>
                         <Box className="imghoverBox">
-                            <img className="imghover" style={{width:'100%'}} src={tips1} alt="" />
+                            <img className="imghover" style={{width:'100%'}} src="https://i.ibb.co/frTQfYP/team2.jpg" alt="" />
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} >
@@ -20,8 +20,7 @@ const Tips = () => {
                                 01
                             </Typography>
                             <Typography sx={{ my: 2, fontWeight: 600 }} variant="h3">
-                                RUN AN EXTRA
-                                MILE EASILY
+                                JANVI - CEO & FOUNDER
                             </Typography>
                             <Typography sx={{ my: 2 }} variant="body1">
                             Prepare for your first half-marathon or run another one easily with our personalized running programs. Try our strength exercises for runners.
@@ -38,8 +37,7 @@ const Tips = () => {
                                 02
                             </Typography>
                             <Typography sx={{ my: 2, fontWeight: 600, textAlign:'end' }} variant="h3">
-                                RUN AN EXTRA
-                                MILE EASILY
+                            SOFIA - CEO & FOUNDER
                             </Typography>
                             <Typography sx={{ my: 2, textAlign:'end' }} variant="body1">
                             Prepare for your first half-marathon or run another one easily with our personalized running programs. Try our strength exercises for runners.
@@ -52,7 +50,7 @@ const Tips = () => {
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box className="imghoverBox">
-                            <img className="imghover" style={{width:'100%'}} src={tips2} alt="" />
+                            <img className="imghover" style={{width:'100%'}} src="https://i.ibb.co/QHb0ymS/team3.jpg" alt="" />
                         </Box>
                     </Grid>
                 </Grid>

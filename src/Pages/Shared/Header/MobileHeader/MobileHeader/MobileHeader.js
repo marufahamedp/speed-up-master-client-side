@@ -43,6 +43,7 @@ const MobileHeader = () => {
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
+
         >
           <List>
            <ListItem>
@@ -116,8 +117,8 @@ const MobileHeader = () => {
        
           {['left'].map((anchor) => (
             <React.Fragment key={anchor}>
-              <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+              <Box sx={{mb:7, flexGrow: 1 }}>
+      <AppBar position="fixed" sx={{ mb:8 }}>
         <Toolbar>
           <IconButton
             size="large"

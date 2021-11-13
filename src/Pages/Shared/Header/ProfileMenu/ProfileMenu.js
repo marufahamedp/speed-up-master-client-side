@@ -14,6 +14,9 @@ import Logout from '@mui/icons-material/Logout';
 import useAuth from '../../../../hook/useAuth';
 import { Link } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import AssignmentReturnedIcon from '@mui/icons-material/AssignmentReturned';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import PaymentIcon from '@mui/icons-material/Payment';
 const ProfileMenu = () => {
   const {user, logout} =useAuth();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -70,10 +73,36 @@ const ProfileMenu = () => {
         >
           <Link to="/profile" style={{textDecoration: 'none', color:'black'}} >
           <MenuItem>
-          <img style={{ width: 35, height: 35, borderRadius: '100%' }} src={user.photoURL} alt="" /><Typography  sx={{ml:1}}>Profile</Typography>
+          <img style={{ width: 35, height: 35, borderRadius: '100%' }} src={user.photoURL} alt="" /><Typography  sx={{ml:1}}>{user.displayName}</Typography>
           </MenuItem>
           </Link>
           <Divider />
+      
+         <Link to="/dashboard/myorders" style={{textDecoration: 'none', color:'black'}} >
+         <MenuItem>
+            <ListItemIcon>
+              <AssignmentReturnedIcon fontSize="small" />
+            </ListItemIcon>
+            My Order
+          </MenuItem>
+         </Link>
+         <Link to="/dashboard/reviews" style={{textDecoration: 'none', color:'black'}} >
+         <MenuItem>
+            <ListItemIcon>
+              <ReviewsIcon fontSize="small" />
+            </ListItemIcon>
+            Reviews
+          </MenuItem>
+         </Link>
+         <Link to="/dashboard/pay" style={{textDecoration: 'none', color:'black'}} >
+         <MenuItem>
+            <ListItemIcon>
+              <PaymentIcon fontSize="small" />
+            </ListItemIcon>
+            Pay
+          </MenuItem>
+         </Link>
+        
          <Link to="/dashboard" style={{textDecoration: 'none', color:'black'}} >
          <MenuItem>
           <ListItemIcon>
@@ -82,19 +111,7 @@ const ProfileMenu = () => {
             <Typography>Dashboard</Typography>
           </MenuItem>
          </Link>
-          <MenuItem>
-            <ListItemIcon>
-              <PersonAdd fontSize="small" />
-            </ListItemIcon>
-            Add another account
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <Settings fontSize="small" />
-            </ListItemIcon>
-            Settings
-          </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={logout} >
             <ListItemIcon>
               <Logout fontSize="small" />
             </ListItemIcon>

@@ -13,31 +13,38 @@ import useAuth from '../../../../hook/useAuth';
 import logo from '../../../../images/logo.png'
 const Header = () => {
   const {user, logout} =useAuth();
+  const styles = {
+        background: 'white',    
+}
+
+
+
     return (
-        <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <Box>
+          <Box  sx={{ flexGrow: 1, mb:8 }}>
+        <AppBar style={styles} position="fixed">
         <Container>
           <Toolbar>
           
-           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+           <Typography variant="h6" component="div" sx={{ flexGrow: 1,  color:'black' }}>
            
-           <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}><img style={{width:'100%'}} src={logo}/></Button> </Link>
+           <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'black'}}><img style={{width:'100%'}} src={logo}/></Button> </Link>
             </Typography>
             
-            <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>Home</Button> </Link>
-            <Link style={{textDecoration: 'none'}} to="/allcars"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>All Cars</Button> </Link>
-            <Link style={{textDecoration: 'none'}} to="/about"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>About</Button> </Link>
-            <Link style={{textDecoration: 'none'}} to="/contact"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>Contact</Button> </Link>
+            <Link style={{textDecoration: 'none'}} to="/home"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'black'}}>Home</Button> </Link>
+            <Link style={{textDecoration: 'none'}} to="/allcars"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'black'}}>All Cars</Button> </Link>
+            <Link style={{textDecoration: 'none'}} to="/about"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'black'}}>About</Button> </Link>
+            <Link style={{textDecoration: 'none'}} to="/contact"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'black'}}>Contact</Button> </Link>
             {
               user.email && <Box sx={{display:'flex'}}>
-                <Button onClick={logout}  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>Log Out</Button>
+              
               <ProfileMenu></ProfileMenu>
               </Box>
             }
             {
               !user.email && <Box sx={{display:'flex'}}>
-                <Link style={{textDecoration: 'none'}} to="/login"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>Log In</Button> </Link>
-            <Link style={{textDecoration: 'none'}} to="/register"> <Button  sx={{display: { xs: 'none', sm: 'block' } }} style={{color: 'white'}}>Register</Button> </Link>
+                <Link style={{textDecoration: 'none', marginLeft:'10px'}} to="/login"> <Button  variant="outlined" sx={{display: { xs: 'none', sm: 'block' } }} style={{}}>Log In</Button> </Link>
+            <Link style={{textDecoration: 'none', marginLeft:'10px'}} to="/register"> <Button  variant="contained" sx={{display: { xs: 'none', sm: 'block' } }} style={{}}>Register</Button> </Link>
               </Box>
             }
             
@@ -47,6 +54,7 @@ const Header = () => {
           </Container>
         </AppBar>
       </Box>
+        </Box>
     );
 };
 

@@ -8,6 +8,14 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 import { useHistory, useLocation } from 'react-router';
 const Register = () => {
+    const bguse ={
+        backgroundImage: `url(https://i.ibb.co/1LYJYbS/samuele-errico-piccarini-FMb-WFDi-VRPs-unsplash.jpg)`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: '650px'
+    }
+
     const { user, registerUser, isLoading, authError } = useAuth();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const history = useHistory();
@@ -25,7 +33,7 @@ const Register = () => {
     return (
         <div>
 
-            <Box sx={{my:2}}>
+            <Box style={bguse} sx={{my:2}}>
                 {
                     user?.email && <Alert severity="success">Registerd successfully</Alert>
                 }
@@ -35,12 +43,15 @@ const Register = () => {
                 <Container>
 
                     <Grid container spacing={2}>
-                        <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Grid item xs={12} md={8}>
+                           
+                        </Grid>
+                        <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             {
                                 isLoading && <CircularProgress />
                             }
                             {!isLoading && <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                <Paper sx={{ p: 4, width: '60%' }}>
+                                <Paper sx={{ p: 4, width: '100%' }}>
                                     <Typography variant="h5" sx={{ my: 3, textAlign: 'center', fontWeight: '600' }}>
                                         Register
                                     </Typography>
@@ -108,9 +119,7 @@ const Register = () => {
                             </Box>}
 
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <img style={{ width: '100%' }} src={loginBG} alt="" />
-                        </Grid>
+                      
                     </Grid>
                 </Container>
             </Box>

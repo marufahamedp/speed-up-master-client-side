@@ -21,9 +21,16 @@ const Login = () => {
     const handelGooglesingin = () => {
         signInWithGoogle(location, history)
     }
+    const bguse ={
+        backgroundImage: `url(https://i.ibb.co/1LYJYbS/samuele-errico-piccarini-FMb-WFDi-VRPs-unsplash.jpg)`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: '650px'
+    }
 
     return (
-        <Box sx={{my:2}}>
+        <Box style={bguse} sx={{my:2,}}>
             {
                     user?.email && <Alert severity="success">Log in successfully</Alert>
                 }
@@ -32,12 +39,15 @@ const Login = () => {
                 }
             <Container>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Grid item xs={12} md={8}>
+                        <img style={{ width: '100%' }} src="" alt="" />
+                    </Grid>
+                    <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt:10 }}>
                         {
                             isLoading && <CircularProgress />
                         }
                         {!isLoading && <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Paper sx={{ p: 4, width: '60%' }}>
+                            <Paper sx={{ p: 4, width: '100%' }}>
                                 <Typography variant="h5" sx={{ my: 3, textAlign: 'center', fontWeight: '600' }}>
                                     Log In
                                 </Typography>
@@ -67,8 +77,8 @@ const Login = () => {
                                     >
                                         Sing In
                                     </Button>
-                                   <Typography sx={{ display: { xs: 'none', sm: 'block' } }}>
-                                   ----------------------------------OR-----------------------------------
+                                   <Typography sx={{ display: { xs: 'none', sm: 'block' }, textAlign:'center' }}>
+                                   ------OR------
                                    </Typography>
                                     <Box
                                         sx={{ mt: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
@@ -86,9 +96,7 @@ const Login = () => {
                             
                         </Box>}
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <img style={{ width: '100%' }} src={loginBG} alt="" />
-                    </Grid>
+                    
                 </Grid>
             </Container>
         </Box>

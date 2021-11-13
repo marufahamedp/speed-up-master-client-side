@@ -85,16 +85,7 @@ export default function ProfileDeta() {
        Email: {user.email}
        </Typography>
        <Typography  sx={{mb:1}}>
-       Phone: (+880)1315560101
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Date Of Birth: 09/11/2021
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Register On This Site: 09/11/2021
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Role: Admin
+       Role: {user.role}
        </Typography>
        </Paper>
        </Box>
@@ -138,16 +129,7 @@ export default function ProfileDeta() {
        Email: {user.email}
        </Typography>
        <Typography  sx={{mb:1}}>
-       Phone: (+880)1315560101
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Date Of Birth: 09/11/2021
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Register On This Site: 09/11/2021
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Role: Admin
+       Role: {user.role}
        </Typography>
        </Paper>
        </Box>
@@ -162,17 +144,9 @@ export default function ProfileDeta() {
        <Typography  sx={{mb:1}}>
        Email: {user.email}
        </Typography>
+  
        <Typography  sx={{mb:1}}>
-       Phone: (+880)1315560101
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Date Of Birth: 09/11/2021
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Register On This Site: 09/11/2021
-       </Typography>
-       <Typography  sx={{mb:1}}>
-       Role: Admin
+       Role: {user.role}
        </Typography>
       </TabPanel>
       <TabPanel value={value} index={2}>
