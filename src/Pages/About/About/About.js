@@ -23,7 +23,7 @@ const About = () => {
                OUR STORY
             </Typography>
                 <Typography sx={{ my: 2, textAlign: 'end' }} variant="body1">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet harum saepe provident facere iusto autem animi aperiam a quidem facilis? Distinctio modi hic ex quas ut, totam illum cum? Id?
+                We are providing hing class cars in lowest price. we mostly sell best cars like BMW, FARARI, AUDI, TESLA and so more.
             </Typography>
             <Box sx={{textAlign:'end'}}>
                             <Button className="speedButton" variant="contained">Read More</Button>

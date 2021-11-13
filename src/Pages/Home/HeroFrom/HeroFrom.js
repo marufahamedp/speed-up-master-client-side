@@ -30,13 +30,11 @@ const HeroFrom = () => {
                     defaultValue={user.displayName}
 
                     sx={{ width: '100%', mb: 2 }}
-                    {...register("email")}
+                    {...register("name")}
                 />
                 <TextField
                     label="Email"
-
                     defaultValue={user.email}
-
                     sx={{ width: '100%', mb: 2 }}
                     {...register("email")}
                 />
